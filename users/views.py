@@ -13,9 +13,15 @@ from .serializers import (
     AuthValidateSerializer,
     ConfirmationSerializer,
     RegisterValidateSerializer,
+    CustomTokenObtainPairSerializer,
 )
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 CustomUser = get_user_model()
+
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
 
 class AuthorizationAPIView(CreateAPIView):
