@@ -1,3 +1,4 @@
+import os
 import requests
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
@@ -22,9 +23,9 @@ class GoogleLoginAPIView(CreateAPIView):
             url="https://oauth2.googleapis.com/token",
             data={
                 "code": code,
-                "client_id": "981803348149-4qst1ghhn23r5bdau5ot0q03tbeq000q.apps.googleusercontent.com",
-                "client_secret": "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",
-                "redirect_uri": "http://localhost:8000/api/v1/users/google-login",
+                "client_id": os.environ.get("GOOGLE_CLIENT_ID"),
+                "client_secret": os.environ.get("GOOGLE_CLIENT_SECRET"),
+                "redirect_uri": os.environ.get("GOOGLE_REDIRECT_URI"),
                 "grant_type": "authorization_code"
             }
         )

@@ -1,6 +1,6 @@
 https://accounts.google.com/o/oauth2/v2/auth?
-client_id=981803348149-4qst1ghhn23r5bdau5ot0q03tbeq000q.apps.googleusercontent.com&
-redirect_uri=http://localhost:8000/api/v1/users/google-login&
+client_id=ваш_client_id&
+redirect_uri=ваш_uri&
 response_type=code&
 scope=openid%20email%20profile&
 access_type=offline&
